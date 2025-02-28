@@ -293,16 +293,6 @@ export function NeroChat({ onClose }: NeroChatProps) {
         />
       </div>
 
-      <div className="flex justify-center py-6">
-        <div className="h-48 w-48 p-8 rounded-full bg-gray-100">
-          <img
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-5nPwJ7XsByF8cWNBqmPapf6TgR4m3q.svg"
-            alt="Nero"
-            className="h-full w-full"
-          />
-        </div>
-      </div>
-
       {/* Chat Messages */}
       <div className="flex-1 overflow-y-auto p-4">
         {messages.map((message, index) => (
