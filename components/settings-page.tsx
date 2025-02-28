@@ -1,15 +1,15 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { bitteWallet } from "@/lib/bitte-wallet"
 
 export function SettingsPage() {
   const [activeTab, setActiveTab] = useState("Account")
-  const [connectedWallet, setConnectedWallet] = useState({
-    type: "Meta Mask",
-    address: "vD03Scc89...064",
-  })
+  const [connectedWallet, setConnectedWallet] = useState<{
+    type: string
+    address: string
+  } | null>(null)
 
   const handleDisconnect = async () => {
     await bitteWallet.disconnect()
@@ -23,6 +23,13 @@ export function SettingsPage() {
       address: wallet.shortAddress,
     })
   }
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search)
+    if (params.has("account_id") && params.has("public_key")) {
+      handleConnect()
+    }
+  }, [])
 
   return (
     <div className="p-6">
@@ -53,7 +60,9 @@ export function SettingsPage() {
               <button
                 key={tab}
                 className={`w-full px-4 py-2 text-left ${
-                  activeTab === tab ? "bg-gray-100 font-medium" : "text-gray-600 hover:bg-gray-50"
+                  activeTab === tab
+                    ? "bg-gray-100 font-medium"
+                    : "text-gray-600 hover:bg-gray-50"
                 }`}
                 onClick={() => setActiveTab(tab)}
               >
@@ -68,7 +77,9 @@ export function SettingsPage() {
             <h2 className="text-lg font-semibold mb-4">Your connected wallets</h2>
             {connectedWallet ? (
               <>
-                <p className="text-sm text-gray-600 mb-4">This wallet is currently connected.</p>
+                <p className="text-sm text-gray-600 mb-4">
+                  This wallet is currently connected.
+                </p>
                 <div className="flex items-center justify-between mb-6 p-4 bg-gray-50 rounded-lg">
                   <div className="flex items-center gap-3">
                     <div className="font-medium">{connectedWallet.type}</div>

@@ -1,55 +1,65 @@
 "use client"
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Search, Bell, Menu, X, MessageSquare } from "lucide-react"
-import { bitteWallet } from "@/lib/bitte-wallet"
-import { DashboardPage } from "@/components/dashboard-page"
-import { AutomatePage } from "@/components/automate-page"
-import { QuestsPage } from "@/components/quests-page"
-import { TransactionsPage } from "@/components/transactions-page"
-import { SettingsPage } from "@/components/settings-page"
-import { ChatModal } from "@/components/chat-modal"
-import { NeroChat } from "@/components/nero-chat"
+import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { Search, Bell, Menu, X, MessageSquare } from "lucide-react";
+import { bitteWallet } from "@/lib/bitte-wallet";
+import { DashboardPage } from "@/components/dashboard-page";
+import { AutomatePage } from "@/components/automate-page";
+import { QuestsPage } from "@/components/quests-page";
+import { TransactionsPage } from "@/components/transactions-page";
+import { SettingsPage } from "@/components/settings-page";
+import { ChatModal } from "@/components/chat-modal";
+import { NeroChat } from "@/components/nero-chat";
 
 export default function Dashboard() {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true)
-  const [isChatOpen, setIsChatOpen] = useState(false)
-  const [isNeroChatOpen, setIsNeroChatOpen] = useState(false)
-  const [currentPage, setCurrentPage] = useState("dashboard")
-  const [walletInfo, setWalletInfo] = useState(null)
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const [isChatOpen, setIsChatOpen] = useState(false);
+  const [isNeroChatOpen, setIsNeroChatOpen] = useState(false);
+  const [currentPage, setCurrentPage] = useState("dashboard");
+  const [walletInfo, setWalletInfo] = useState<any>(null);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.has("account_id") && params.has("public_key")) {
+      (async () => {
+        const info = await bitteWallet.connect();
+        setWalletInfo(info);
+      })();
+    }
+  }, []);
 
   const handleWalletConnect = async () => {
     if (bitteWallet.isConnected()) {
-      await bitteWallet.disconnect()
-      setWalletInfo(null)
+      await bitteWallet.disconnect();
+      setWalletInfo(null);
     } else {
-      const info = await bitteWallet.connect()
-      setWalletInfo(info)
+      const info = await bitteWallet.connect();
+      setWalletInfo(info);
     }
-  }
+  };
 
   const handleStartConversation = () => {
-    setIsChatOpen(false)
-    setIsNeroChatOpen(true)
-  }
+    setIsChatOpen(false);
+    setIsNeroChatOpen(true);
+  };
 
   const renderPage = () => {
     switch (currentPage) {
       case "dashboard":
-        return <DashboardPage />
+        return <DashboardPage />;
       case "quests":
-        return <QuestsPage />
+        return <QuestsPage />;
       case "automate":
-        return <AutomatePage />
+        return <AutomatePage />;
       case "transactions":
-        return <TransactionsPage />
+        return <TransactionsPage />;
       case "setting":
-        return <SettingsPage />
+        return <SettingsPage />;
       default:
-        return <DashboardPage />
+        return <DashboardPage />;
     }
-  }
+  };
 
   return (
     <div className="flex min-h-screen bg-gray-50">
@@ -108,7 +118,12 @@ export default function Dashboard() {
         <header className="sticky top-0 z-30 flex h-16 items-center justify-between border-b bg-white px-6">
           <div className="flex items-center">
             <div className="text-xl font-bold capitalize mr-4">{currentPage}</div>
-            <Button variant="outline" size="sm" className="flex items-center gap-2" onClick={() => setIsChatOpen(true)}>
+            <Button
+              variant="outline"
+              size="sm"
+              className="flex items-center gap-2"
+              onClick={() => setIsChatOpen(true)}
+            >
               <MessageSquare className="h-4 w-4" />
               Talk to AI
             </Button>
@@ -126,13 +141,19 @@ export default function Dashboard() {
               onClick={handleWalletConnect}
               className="hidden sm:flex items-center gap-2 rounded-md border border-gray-200 bg-gray-50 px-3 py-1.5 text-sm hover:bg-gray-100"
             >
-              <span className="text-gray-500">{walletInfo ? walletInfo.shortAddress : "Connect Wallet"}</span>
+              <span className="text-gray-500">
+                {walletInfo ? walletInfo.shortAddress : "Connect Wallet"}
+              </span>
             </Button>
             <Button variant="outline" size="icon">
               <Bell className="h-4 w-4" />
             </Button>
             <div className="h-8 w-8 overflow-hidden rounded-full bg-gray-200">
-              <img src="/placeholder.svg?height=32&width=32" alt="User avatar" className="h-full w-full object-cover" />
+              <img
+                src="/placeholder.svg?height=32&width=32"
+                alt="User avatar"
+                className="h-full w-full object-cover"
+              />
             </div>
           </div>
         </header>
@@ -150,6 +171,5 @@ export default function Dashboard() {
       {/* Nero Chat */}
       {isNeroChatOpen && <NeroChat onClose={() => setIsNeroChatOpen(false)} />}
     </div>
-  )
+  );
 }
-
