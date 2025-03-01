@@ -1,8 +1,8 @@
-<h1 align="center">Nero</h1>
+![image](https://github.com/user-attachments/assets/f59cae59-86a8-4afa-9fd1-8ee71ed7e0fc)<h1 align="center">Nero</h1>
 <h3 align="center">AI chatbot-based portfolio management and DeFi automation platform</h3>
 
 <p align="center">
-  <a href="https://nero-kappa.vercel.app/" style="color: #a77dff">Platform</a> | <a href="https://www.figma.com/deck/jQVi1FAhWle4eOBR0V2JZg" style="color: #a77dff">Pitchdeck</a> | <a href="" style="color: #a77dff">Demo Video</a>
+  <a href="https://nero-kappa.vercel.app/" style="color: #a77dff">Platform</a> | <a href="https://www.figma.com/deck/jQVi1FAhWle4eOBR0V2JZg" style="color: #a77dff">Pitchdeck</a> | <a href="https://youtu.be/xOrMul_weBI" style="color: #a77dff">Demo Video</a>
 </p>
 
 <h2 align="center">Sponsor (Click on the logo)</h2>
