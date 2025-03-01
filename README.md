@@ -11,7 +11,7 @@
 <h2 align="center">Sponsor (Click on the logo)</h2>
 
 <p align="center">
-<a href="" height="5" width="10" target="_blank">
+<a href="https://github.com/aki-0517/Nero/blob/main/README.md#1-bitte-wallet" height="5" width="10" target="_blank">
 	<img src="https://github.com/user-attachments/assets/7a1f99d9-9860-4654-90c5-4d3ef62c1101" width="300" height="100">
 <a><a href="" height="5" width="10" target="_blank">
 	<img src="https://github.com/user-attachments/assets/53623d3c-c55b-4202-9c55-ef17961021a2" width="200" height="100">
