@@ -43,13 +43,13 @@ Our project is an AI chatbot-based portfolio management and DeFi automation plat
 3. **Educational & Engaging Learning** – Users explore multiple networks, learn about DeFi through conversations, and grow both their portfolio and financial knowledge in a fun, engaging way.
 
 ## Sponsor track
-**1. Bitte wallet:**
+### 1. Bitte wallet:
 - We utilized the Bitte Wallet to enable secure user authentication and transaction capabilities within our React application. By integrating the Bitte Wallet, users can seamlessly log in and execute transactions within the NEAR Protocol ecosystem.
 
-**2. Proximity Labs (Cross-chain Trading Agents):**
+### 2. Proximity Labs (Cross-chain Trading Agents):
 - We integrated NEAR Intents into our application by utilizing the NEAR Intents smart contract (intents.near) and the solver network to determine optimal execution paths for cross-chain swaps. This setup allows users to perform cross-chain swaps efficiently, with the NEAR Intents contract fulfilling requests and utilizing cross-chain bridges as needed to settle intents across different chains.
 
-**3. Questflow:**
+### 3. Questflow:
 - We integrated Questflow into our chat interface, enabling users to interact with AI-driven agents for tasks such as strategic trading, airdrops, and data analysis. By leveraging the Questflow developer platform and NEAR SDK, we created user-friendly tools and agents that can be operated directly through the chat interface, enhancing the overall user experience.
 
 ## Key Features 
