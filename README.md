@@ -2,7 +2,7 @@
 <h3 align="center">AI chatbot-based portfolio management and DeFi automation platform</h3>
 
 <p align="center">
-  <a href="https://nero-kappa.vercel.app/" style="color: #a77dff">Platform</a> | <a href="" style="color: #a77dff">Pitchdeck</a> | <a href="" style="color: #a77dff">Demo Video</a>
+  <a href="https://nero-kappa.vercel.app/" style="color: #a77dff">Platform</a> | <a href="https://www.figma.com/deck/jQVi1FAhWle4eOBR0V2JZg" style="color: #a77dff">Pitchdeck</a> | <a href="" style="color: #a77dff">Demo Video</a>
 </p>
 <p align="center">
   <a href="https://github.com/aki-0517/Nero/blob/main/components/nero-chat.tsx" style="color: #a77dff">Questflow</a> | <a href="https://github.com/aki-0517/Nero/blob/main/lib/bitte-wallet.ts" style="color: #a77dff">Bitte</a> | <a href="https://github.com/aki-0517/Nero/blob/main/components/nero-chat.tsx" style="color: #a77dff">Proximity</a>
