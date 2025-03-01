@@ -4,18 +4,15 @@
 <p align="center">
   <a href="https://nero-kappa.vercel.app/" style="color: #a77dff">Platform</a> | <a href="https://www.figma.com/deck/jQVi1FAhWle4eOBR0V2JZg" style="color: #a77dff">Pitchdeck</a> | <a href="" style="color: #a77dff">Demo Video</a>
 </p>
-<p align="center">
-  <a href="https://github.com/aki-0517/Nero/blob/main/components/nero-chat.tsx" style="color: #a77dff">Questflow</a> | <a href="https://github.com/aki-0517/Nero/blob/main/lib/bitte-wallet.ts" style="color: #a77dff">Bitte</a> | <a href="https://github.com/aki-0517/Nero/blob/main/components/nero-chat.tsx" style="color: #a77dff">Proximity</a>
-</p>
 
 <h2 align="center">Sponsor (Click on the logo)</h2>
 
 <p align="center">
-<a href="https://github.com/aki-0517/Nero/blob/main/README.md#2-proximity-labs-cross-chain-trading-agents" height="5" width="10" target="_blank">
+<a href="https://github.com/aki-0517/Nero/blob/main/components/nero-chat.tsx" height="5" width="10" target="_blank">
 	<img src="https://github.com/user-attachments/assets/7a1f99d9-9860-4654-90c5-4d3ef62c1101" width="300" height="100">
-<a><a href="https://github.com/aki-0517/Nero/blob/main/README.md#1-bitte-wallet" height="5" width="10" target="_blank">
+<a><a href="https://github.com/aki-0517/Nero/blob/main/lib/bitte-wallet.ts" height="5" width="10" target="_blank">
 	<img src="https://github.com/user-attachments/assets/53623d3c-c55b-4202-9c55-ef17961021a2" width="200" height="100">
-<a><a><a href="https://github.com/aki-0517/Nero/blob/main/README.md#3-questflow" height="5" width="10" target="_blank">
+<a><a><a href="https://github.com/aki-0517/Nero/blob/main/components/nero-chat.tsx" height="5" width="10" target="_blank">
 	<img src="https://github.com/user-attachments/assets/c41d321a-1fe9-4341-bdac-2339b73a9333" width="100" height="100">
 
 ---
