@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/f59cae59-86a8-4afa-9fd1-8ee71ed7e0fc)<h1 align="center">Nero</h1>
+<h1 align="center">Nero</h1>
 <h3 align="center">AI chatbot-based portfolio management and DeFi automation platform</h3>
 
 <p align="center">
