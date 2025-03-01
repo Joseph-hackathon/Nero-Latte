@@ -6,61 +6,66 @@ import { ArrowLeft, ArrowUp, ChevronDown, ChevronUp } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { format } from "date-fns"
 
-// Stub function: NEAR Intent swap via backend API
+// Common delay function (2 seconds)
+async function delay(ms: number) {
+  return new Promise((resolve) => setTimeout(resolve, ms))
+}
+
+// Helper function to generate a random transaction hash (64 hex characters)
+function generateRandomTxHash(length = 64): string {
+  let result = "0x"
+  const characters = "abcdef0123456789"
+  for (let i = 0; i < length; i++) {
+    result += characters.charAt(Math.floor(Math.random() * characters.length))
+  }
+  return result
+}
+
+// Stub function: NEAR Intent swap via backend API (mock)
 async function performNearIntentSwap(params: { 
   defuse_asset_identifier_in: string, 
   defuse_asset_identifier_out: string, 
   exact_amount_in: string, 
   network: string 
 }): Promise<{ txHash: string }> {
-  const response = await fetch("/api/near-intent-swap", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(params),
-  })
-  if (!response.ok) {
-    throw new Error(`Swap request failed: ${response.statusText}`)
-  }
-  return await response.json()
+  await delay(2000)
+  return { txHash: generateRandomTxHash() }
 }
 
-// Stub function: Questflow action via backend API
+// Stub function: Questflow action via backend API (mock)
 async function performQuestflowAction(params: { agentType: string }): Promise<{ result: string }> {
-  const response = await fetch("/api/questflow-agent", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(params),
-  })
-  if (!response.ok) {
-    throw new Error(`Questflow action request failed: ${response.statusText}`)
-  }
-  return await response.json()
+  await delay(2000)
+  return { result: `Questflow action for agent '${params.agentType}' executed successfully!` }
 }
 
-// Stub functions for other actions
+// Stub function: Buy action (mock)
 async function performBuyAction(params: { token: string, amount: string }): Promise<{ txHash: string }> {
-  // TODO: Implement Buy API call
-  return { txHash: "buy-tx-hash-placeholder" }
+  await delay(2000)
+  return { txHash: generateRandomTxHash() }
 }
 
+// Stub function: Sell action (mock)
 async function performSellAction(params: { token: string, amount: string }): Promise<{ txHash: string }> {
-  // TODO: Implement Sell API call
-  return { txHash: "sell-tx-hash-placeholder" }
+  await delay(2000)
+  return { txHash: generateRandomTxHash() }
 }
 
+// Stub function: Bridge action (mock)
 async function performBridgeAction(params: { token: string, amount: string, destinationChain: string }): Promise<{ txHash: string }> {
-  // TODO: Implement Bridge API call
-  return { txHash: "bridge-tx-hash-placeholder" }
+  await delay(2000)
+  return { txHash: generateRandomTxHash() }
 }
 
+// Stub function: Send action (mock)
 async function performSendAction(params: { token: string, amount: string, destinationAddress: string }): Promise<{ txHash: string }> {
-  // TODO: Implement Send API call
-  return { txHash: "send-tx-hash-placeholder" }
+  await delay(2000)
+  return { txHash: generateRandomTxHash() }
 }
 
+// Stub function: Stake action (mock)
 async function performStakeAction(params: { token: string, amount: string }): Promise<{ txHash: string }> {
-  // TODO: Implement Stake API call
-  return { txHash: "stake-tx-hash-placeholder" }
+  await delay(2000)
+  return { txHash: generateRandomTxHash() }
 }
 
 interface NeroChatProps {
@@ -70,7 +75,7 @@ interface NeroChatProps {
 type SwapFlowStep = "none" | "askTokenPair" | "askAmount"
 type QuestflowFlowStep = "none" | "askAgent"
 type BuyFlowStep = "none" | "askBuyDetails"
-// 同様に Sell, Bridge, Send, Stake のフローも必要に応じて定義可能
+// Similar flow types for Sell, Bridge, Send, Stake can be defined as needed
 
 export function NeroChat({ onClose }: NeroChatProps) {
   const [showDefiOptions, setShowDefiOptions] = useState(false)
@@ -102,6 +107,8 @@ export function NeroChat({ onClose }: NeroChatProps) {
     step: BuyFlowStep,
     details?: { token: string, amount: string }
   }>({ step: "none" })
+
+  // Other flows (Sell, Bridge, Send, Stake) can be managed similarly
 
   const addMessage = (content: string, isUser = false) => {
     setMessages((prev) => [
@@ -161,11 +168,14 @@ export function NeroChat({ onClose }: NeroChatProps) {
       if (questflowFlow.step === "askAgent") {
         setQuestflowFlow({ step: "none", agentType: userInput })
         addMessage(`Questflow agent set to '${userInput}'. Initiating Questflow action...`)
+        setIsProcessing(true)
         try {
           const result = await performQuestflowAction({ agentType: userInput })
           addMessage(`Questflow action completed! Result: ${result.result}`)
         } catch (error: any) {
           addMessage(`Questflow action error: ${error.message}`)
+        } finally {
+          setIsProcessing(false)
         }
       }
       return
@@ -235,7 +245,7 @@ export function NeroChat({ onClose }: NeroChatProps) {
     }
   }
 
-  // Updated handleDefiAction to add functionality for each option
+  // Updated handleDefiAction to add functionality for each option with mock actions
   const handleDefiAction = (action: string) => {
     setShowDefiOptions(false)
     if (action === "Swap") {
@@ -248,17 +258,37 @@ export function NeroChat({ onClose }: NeroChatProps) {
       addMessage("You selected Buy. Please provide the buy details in the format 'TOKEN amount' (e.g., NEAR 10).")
       setBuyFlow({ step: "askBuyDetails" })
     } else if (action === "Sell") {
-      addMessage("You selected Sell. (Sell functionality to be implemented similarly.)")
-      // TODO: Set up sellFlow and call performSellAction accordingly.
+      addMessage("You selected Sell. Please provide the sell details in the format 'TOKEN amount' (e.g., NEAR 10).")
+      // Example of Sell flow (calling the mock function directly)
+      setIsProcessing(true)
+      performSellAction({ token: "NEAR", amount: "10" })
+        .then(result => addMessage(`Sell successful! Transaction Hash: ${result.txHash}`))
+        .catch(error => addMessage(`Sell error: ${error.message}`))
+        .finally(() => setIsProcessing(false))
     } else if (action === "Bridge") {
-      addMessage("You selected Bridge. (Bridge functionality to be implemented similarly.)")
-      // TODO: Set up bridgeFlow and call performBridgeAction accordingly.
+      addMessage("You selected Bridge. Please provide the details in the format 'TOKEN amount destinationChain' (e.g., NEAR 10 Ethereum).")
+      // Example of Bridge flow
+      setIsProcessing(true)
+      performBridgeAction({ token: "NEAR", amount: "10", destinationChain: "Ethereum" })
+        .then(result => addMessage(`Bridge successful! Transaction Hash: ${result.txHash}`))
+        .catch(error => addMessage(`Bridge error: ${error.message}`))
+        .finally(() => setIsProcessing(false))
     } else if (action === "Send") {
-      addMessage("You selected Send. (Send functionality to be implemented similarly.)")
-      // TODO: Set up sendFlow and call performSendAction accordingly.
+      addMessage("You selected Send. Please provide the details in the format 'TOKEN amount destinationAddress' (e.g., NEAR 10 0x123...).")
+      // Example of Send flow
+      setIsProcessing(true)
+      performSendAction({ token: "NEAR", amount: "10", destinationAddress: "0x123..." })
+        .then(result => addMessage(`Send successful! Transaction Hash: ${result.txHash}`))
+        .catch(error => addMessage(`Send error: ${error.message}`))
+        .finally(() => setIsProcessing(false))
     } else if (action === "Stake") {
-      addMessage("You selected Stake. (Stake functionality to be implemented similarly.)")
-      // TODO: Set up stakeFlow and call performStakeAction accordingly.
+      addMessage("You selected Stake. Please provide the stake details in the format 'TOKEN amount' (e.g., NEAR 10).")
+      // Example of Stake flow
+      setIsProcessing(true)
+      performStakeAction({ token: "NEAR", amount: "10" })
+        .then(result => addMessage(`Stake successful! Transaction Hash: ${result.txHash}`))
+        .catch(error => addMessage(`Stake error: ${error.message}`))
+        .finally(() => setIsProcessing(false))
     } else {
       addMessage(`You selected: ${action}. Let me help you with that.`)
     }
@@ -334,7 +364,7 @@ export function NeroChat({ onClose }: NeroChatProps) {
                 variant="outline"
                 className="border-2 border-blue-200 py-3 text-blue-600 hover:bg-blue-50"
                 onClick={() => handleDefiAction(action)}
-                disabled={isProcessing && action === "Swap"} // Example: disable Swap if processing
+                disabled={isProcessing && action === "Swap"}
               >
                 {action}
               </Button>
