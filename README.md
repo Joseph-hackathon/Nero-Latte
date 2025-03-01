@@ -8,6 +8,16 @@
   <a href="https://github.com/aki-0517/Nero/blob/main/components/nero-chat.tsx" style="color: #a77dff">Questflow</a> | <a href="https://github.com/aki-0517/Nero/blob/main/lib/bitte-wallet.ts" style="color: #a77dff">Bitte</a> | <a href="https://github.com/aki-0517/Nero/blob/main/components/nero-chat.tsx" style="color: #a77dff">Proximity</a>
 </p>
 
+<h2 align="center">Sponsor (Click on the logo)</h2>
+
+<p align="center">
+<a href="" height="5" width="10" target="_blank">
+	<img src="https://github.com/user-attachments/assets/7a1f99d9-9860-4654-90c5-4d3ef62c1101" width="300" height="100">
+<a><a href="" height="5" width="10" target="_blank">
+	<img src="https://github.com/user-attachments/assets/53623d3c-c55b-4202-9c55-ef17961021a2" width="200" height="100">
+<a><a><a href="" height="5" width="10" target="_blank">
+	<img src="https://github.com/user-attachments/assets/c41d321a-1fe9-4341-bdac-2339b73a9333" width="100" height="100">
+
 ---
 ![banner-nero](https://github.com/user-attachments/assets/54679f20-6d3a-4222-854e-af2751571d5b)
 
@@ -31,6 +41,16 @@ Our project is an AI chatbot-based portfolio management and DeFi automation plat
 2. **Interactive & Gamified Experience** – Users earn experience points (XP) through transactions and chatbot interactions, leveling up their agent bot as a personalized digital asset manager.  
 
 3. **Educational & Engaging Learning** – Users explore multiple networks, learn about DeFi through conversations, and grow both their portfolio and financial knowledge in a fun, engaging way.
+
+## Sponsor track
+**1. Bitte wallet:**
+- We utilized the Bitte Wallet to enable secure user authentication and transaction capabilities within our React application. By integrating the Bitte Wallet, users can seamlessly log in and execute transactions within the NEAR Protocol ecosystem.
+
+**2. Proximity Labs (Cross-chain Trading Agents):**
+- We integrated NEAR Intents into our application by utilizing the NEAR Intents smart contract (intents.near) and the solver network to determine optimal execution paths for cross-chain swaps. This setup allows users to perform cross-chain swaps efficiently, with the NEAR Intents contract fulfilling requests and utilizing cross-chain bridges as needed to settle intents across different chains.
+
+**3. Questflow:**
+- We integrated Questflow into our chat interface, enabling users to interact with AI-driven agents for tasks such as strategic trading, airdrops, and data analysis. By leveraging the Questflow developer platform and NEAR SDK, we created user-friendly tools and agents that can be operated directly through the chat interface, enhancing the overall user experience.
 
 ## Key Features 
 1. **AI Agent for DeFi Management** – Automates swaps, bridges, and staking to optimize portfolio management.  
