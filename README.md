@@ -112,9 +112,7 @@ sequenceDiagram
 
 **Q1 – MVP Completion & Core Integrations**  
 - Finalize **MVP development**  
-- Integrate **NEAR Protocol**  
-- Implement **Bitte Wallet**  
-- Connect **Frax Finance**  
+- **Bitte wallet**, **Questflow**, **Proximity** integration
 
 **Q2 – Expansion & Widget Development**  
 - Develop **Chatbot Widget Chrome Extension**  
