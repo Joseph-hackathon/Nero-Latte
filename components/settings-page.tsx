@@ -16,6 +16,7 @@ export function SettingsPage() {
     setConnectedWallet(null)
   }
 
+
   const handleConnect = async () => {
     const wallet = await bitteWallet.connect()
     setConnectedWallet({
@@ -30,6 +31,8 @@ export function SettingsPage() {
       handleConnect()
     }
   }, [])
+
+  
 
   return (
     <div className="p-6">

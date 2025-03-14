@@ -1,3 +1,4 @@
+"use client";
 import { Search, Bell, Home, Gift, Zap, History, Settings } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -11,7 +12,7 @@ const Dashboard = () => {
           <span className="text-xl font-bold">logo</span>
         </div>
         <nav className="space-y-1 p-4">
-          <Button variant="subtle" className="w-full justify-start gap-3 bg-purple-50 text-purple-700">
+          <Button variant="ghost" className="w-full justify-start gap-3 bg-purple-50 text-purple-700">
             <Home className="h-5 w-5" />
             Dashboard
           </Button>

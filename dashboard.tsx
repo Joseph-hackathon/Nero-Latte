@@ -1,5 +1,4 @@
-"use client"
-
+"use client";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Search, Bell, Menu, X, MessageSquare } from "lucide-react";
@@ -9,8 +8,10 @@ import { AutomatePage } from "@/components/automate-page";
 import { QuestsPage } from "@/components/quests-page";
 import { TransactionsPage } from "@/components/transactions-page";
 import { SettingsPage } from "@/components/settings-page";
+
 import { ChatModal } from "@/components/chat-modal";
 import { NeroChat } from "@/components/nero-chat";
+import { ConnectButton } from "@/components/ConnectButton";
 
 export default function Dashboard() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -70,7 +71,11 @@ export default function Dashboard() {
         className="fixed left-4 top-4 z-50 md:hidden"
         onClick={() => setIsSidebarOpen(!isSidebarOpen)}
       >
-        {isSidebarOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
+        {isSidebarOpen ? (
+          <X className="h-4 w-4" />
+        ) : (
+          <Menu className="h-4 w-4" />
+        )}
       </Button>
 
       {/* Sidebar */}
@@ -98,9 +103,13 @@ export default function Dashboard() {
               ].map((item) => (
                 <Button
                   key={item.name}
-                  variant={currentPage === item.name.toLowerCase() ? "subtle" : "ghost"}
+                  variant={
+                    currentPage === item.name.toLowerCase() ? "secondary" : "ghost"
+                  }
                   className={`w-full justify-start gap-3 ${
-                    currentPage === item.name.toLowerCase() ? "bg-gray-100 text-gray-900" : "text-gray-700"
+                    currentPage === item.name.toLowerCase()
+                      ? "bg-gray-100 text-gray-900"
+                      : "text-gray-700"
                   }`}
                   onClick={() => setCurrentPage(item.name.toLowerCase())}
                 >
@@ -117,7 +126,9 @@ export default function Dashboard() {
       <div className={`flex-1 ${isSidebarOpen ? "md:ml-64" : ""}`}>
         <header className="sticky top-0 z-30 flex h-16 items-center justify-between border-b bg-white px-6">
           <div className="flex items-center">
-            <div className="text-xl font-bold capitalize mr-4">{currentPage}</div>
+            <div className="text-xl font-bold capitalize mr-4">
+              {currentPage}
+            </div>
             <Button
               variant="outline"
               size="sm"
@@ -137,14 +148,10 @@ export default function Dashboard() {
                 className="h-10 rounded-md border border-gray-200 bg-gray-50 pl-10 pr-4 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
-            <Button
-              onClick={handleWalletConnect}
-              className="hidden sm:flex items-center gap-2 rounded-md border border-gray-200 bg-gray-50 px-3 py-1.5 text-sm hover:bg-gray-100"
-            >
-              <span className="text-gray-500">
-                {walletInfo ? walletInfo.shortAddress : "Connect Wallet"}
-              </span>
-            </Button>
+            <div>
+              <ConnectButton />
+            </div>
+
             <Button variant="outline" size="icon">
               <Bell className="h-4 w-4" />
             </Button>
