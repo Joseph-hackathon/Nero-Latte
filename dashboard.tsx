@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Search, Bell, Menu, X, MessageSquare } from "lucide-react";
 import { bitteWallet } from "@/lib/bitte-wallet";
-import { DashboardPage } from "@/components/dashboard-page";
+import DashboardPage from "@/components/dashboard-page";
 import { AutomatePage } from "@/components/automate-page";
 import { QuestsPage } from "@/components/quests-page";
 import { TransactionsPage } from "@/components/transactions-page";
@@ -85,12 +85,13 @@ export default function Dashboard() {
         }`}
       >
         <div className="flex h-full flex-col">
-          <div className="flex h-16 items-center border-b px-6">
+          <div className="flex h-16 items-center border-b px-6 gap-7">
             <img
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-5nPwJ7XsByF8cWNBqmPapf6TgR4m3q.svg"
+              src="/Navbar logo.png"
               alt="Logo"
               className="h-8 w-8"
             />
+            <span className="text-lg font-medium text-gray-800">NeroLatte</span>
           </div>
           <div className="flex-1 overflow-auto py-4">
             <nav className="space-y-1 px-3">
