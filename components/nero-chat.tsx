@@ -402,467 +402,132 @@ export function NeroChat({ onClose }: NeroChatProps) {
     }
   };
 
-  //   return (
-  //     <Card className="relative w-full max-w-[892px] h-[895px] bg-collection-1-colors-black rounded-[var(--collection-1-spacing-large-box-corners)] overflow-hidden shadow-chatbot-modal-shadow">
-  //     {/* <div className="fixed inset-0 z-50 flex flex-col bg-white"> */}
-  //       {/* Header */}
-  //       <header className="flex items-center justify-between p-6 bg-collection-1-colors-light-blue border-b border-[#e4e4e4]">
-  //       {/* <div className="flex items-center justify-between border-b p-4">
-  //         <div className="flex items-center gap-3"> */}
-  //         <div className="flex items-center gap-[var(--size-space-200)]">
-  //           <Button variant="ghost" size="icon" onClick={onClose}>
-  //           <ChevronLeft className="w-6 h-6" />
-  //           </Button>
-  //           <h1 className="font-bold [font-family:'HelveticaNeue-Bold',Helvetica] text-collection-1-colors-super-dark-brown-text text-4xl leading-9">Nero</h1>
-  //         </div>
-
-  //       {/* </div> */}
-  //       </header>
-
-  //       {/* API Key Input */}
-  //       <div className="flex flex-col h-[calc(100%-188px)] overflow-y-auto p-[50px] space-y-10">
-  //         <label className="block text-sm font-medium text-gray-700 mb-1">
-  //           OpenAI API Key
-  //         </label>
-  //         <input
-  //           type="password"
-  //           value={apiKey}
-  //           onChange={(e) => setApiKey(e.target.value)}
-  //           placeholder="sk-..."
-  //           className="w-full rounded border border-gray-300 py-2 px-3"
-  //         />
-  //       </div>
-
-  //       {/* Chat Messages */}
-  //       {/* <div className="flex-1 overflow-y-auto p-4">
-  //         {messages.map((message, index) => (
-  //           <div key={index} className={`mb-4 flex ${message.isUser ? "justify-end" : "justify-start"}`}>
-  //             {!message.isUser && (
-  //               <div className="mr-2 h-6 w-6 flex-shrink-0 rounded bg-gray-100 p-1">
-  //                 <img
-  //                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-5nPwJ7XsByF8cWNBqmPapf6TgR4m3q.svg"
-  //                   alt="Nero"
-  //                   className="h-full w-full"
-  //                 />
-  //               </div>
-  //             )}
-  //             <div className={`rounded-lg p-3 ${message.isUser ? "bg-blue-100 text-gray-800" : "bg-gray-100 text-gray-800"}`}>
-  //               <p>{message.content}</p>
-  //               <div className="mt-1 text-xs text-gray-500">
-  //                 {message.isUser ? "You" : "Nero"} • {format(message.timestamp, "MMM d, yyyy")}
-  //               </div>
-  //             </div>
-  //           </div>
-  //         ))}
-  //       </div> */}
-
-  // <div className="flex items-start gap-2">
-  //     <Avatar className="w-12 h-12 bg-collection-1-colors-accent rounded-[631.58px]">
-  //       <AvatarFallback className="flex items-center justify-center">
-  //          <span className="text-xs text-collection-1-colors-white">N</span>
-  //        </AvatarFallback>
-  //      </Avatar>
-
-  //      <div className="flex flex-col items-start gap-2 flex-1">
-  //        <CardContent className="flex flex-col p-6 bg-[#f7f7f7] rounded-[0px_16px_16px_16px]">
-  //          <p className="[font-family:'HelveticaNeue-Light',Helvetica] font-light text-collection-1-colors-super-dark-brown-text text-base leading-[26.1px]">
-  //            {chatMessages[0].content}
-  //         </p>
-  // </CardContent>
-
-  //       <div className="flex items-center gap-2 w-full">
-  //          <div className="flex items-center gap-2">
-  //            <Copy className="w-6 h-6" />
-  //          </div>
-  //          <span className="[font-family:'HelveticaNeue-Light',Helvetica] font-light text-collection-1-colors-dark-gray text-xs leading-[19.6px]">
-  //            {chatMessages[0].timestamp}
-  //         </span>
-  //        </div>
-  //    </div>
-  //   </div>
-
-  //       {/* DeFi Options */}
-  //       <div className="border-t">
-  //         <div
-  //           className="flex cursor-pointer items-center justify-between p-4"
-  //           onClick={() => setShowDefiOptions(!showDefiOptions)}
-  //         >
-  //           <div className="text-lg font-semibold">Ask Nero to manage your DeFi portfolio</div>
-  //           {showDefiOptions ? <ChevronUp className="h-5 w-5" /> : <ChevronDown className="h-5 w-5" />}
-  //         </div>
-
-  //         {showDefiOptions && (
-  //           <div className="grid grid-cols-2 gap-3 p-4">
-  //             {["Buy", "Sell", "Swap", "Bridge", "Send", "Stake", "Questflow"].map((action) => (
-  //               <Button
-  //                 key={action}
-  //                 variant="outline"
-  //                 className="border-2 border-blue-200 py-3 text-blue-600 hover:bg-blue-50"
-  //                 onClick={() => handleDefiAction(action)}
-  //                 disabled={isProcessing && action === "Swap"}
-  //               >
-  //                 {action}
-  //               </Button>
-  //             ))}
-  //           </div>
-  //         )}
-  //       </div>
-
-  //       {/* Message Input */}
-  //       <div className="border-t p-4">
-  //         <form onSubmit={handleSendMessage} className="relative">
-  //           <input
-  //             type="text"
-  //             value={inputValue}
-  //             onChange={(e) => setInputValue(e.target.value)}
-  //             placeholder="Write your message..."
-  //             className="w-full rounded-full border border-gray-300 py-3 pl-4 pr-12"
-  //           />
-  //           <Button
-  //             type="submit"
-  //             size="icon"
-  //             className="absolute right-2 top-1/2 h-8 w-8 -translate-y-1/2 rounded-full bg-gray-100"
-  //             disabled={!inputValue.trim()}
-  //           >
-  //             <ArrowUp className="h-4 w-4" />
-  //           </Button>
-  //         </form>
-  //       </div>
-  //     </Card>
-  //   )
-  // }
-
-  //   const chatMessages = [
-  //     {id : 1, sender : "bot", content : "eigggggggggggggggggggggg", timestamp : "Feb 26, 2025"}, {id : 1, sender : "bot", content : "eigggggggggggggggggggggg", timestamp : "Feb 26, 2025"}, {id : 1, sender : "bot", content : "eigggggggggggggggggggggg", timestamp : "Feb 26, 2025"}
-  //   ]
   return (
-    <div className="flex justify-center items-center w-full min-h-screen p-4">
-    <Card className="relative w-full max-w-[892px] h-[895px] bg-collection-1-colors-white rounded-[var(--collection-1-spacing-large-box-corners)] overflow-hidden shadow-chatbot-modal-shadow">
-      {/* Header */}
-      <header className="flex items-center justify-between p-6 bg-collection-1-colors-light-blue border-b border-[#e4e4e4]">
-        <div className="flex items-center gap-[var(--size-space-200)]">
-          <Button variant="ghost" size="icon" onClick={onClose}>
-            <ChevronLeft className="w-6 h-6" />
-          </Button>
-          <h1 className="font-bold [font-family:'HelveticaNeue-Bold',Helvetica] text-collection-1-colors-super-dark-brown-text text-4xl leading-9">
-            Nero
-          </h1>
-        </div>
-      </header>
+    <div className="fixed inset-0 z-50 flex justify-center items-center bg-black/50">
+      <Card className="relative w-1/2 max-w-[892px] h-full bg-none overflow-hidden shadow-chatbot-modal-shadow">
+        {/* Header */}
+        <header className="flex items-center justify-between p-6 bg-collection-1-colors-light-blue border-b border-[#e4e4e4]">
+          <div className="flex items-center gap-[var(--size-space-200)]">
+            <Button variant="ghost" size="icon" onClick={onClose}>
+              <ChevronLeft className="w-6 h-6" />
+            </Button>
+            <h1 className="font-bold [font-family:'HelveticaNeue-Bold',Helvetica] text-collection-1-colors-super-dark-brown-text text-4xl leading-9">
+              Nero
+            </h1>
+          </div>
+        </header>
 
-      {/* Chat container */}
-      <div className="flex flex-col h-[calc(100%-188px)] overflow-y-auto p-[50px] space-y-10">
-       
-        {/* First bot message */}
-        <div className="flex items-start gap-2">
-          
+        {/* Chat container */}
+        <div className="flex flex-col h-[calc(100%-188px)] overflow-y-auto p-[50px] space-y-4">
           {messages.map((message, index) => (
             <div
               key={index}
-              className={`mb-4 flex ${
+              className={`flex w-full ${
                 message.isUser ? "justify-end" : "justify-start"
               }`}
             >
               {!message.isUser && (
-                <div className="mr-2 h-6 w-6 flex-shrink-0 rounded bg-gray-100 p-1">
-                  <img
-                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-5nPwJ7XsByF8cWNBqmPapf6TgR4m3q.svg"
-                    alt="Nero"
-                    className="h-full w-full"
-                  />
+                <div className="flex items-start gap-2">
+                  <div className="w-8 h-8 rounded-full bg-gray-100 p-1">
+                    <img
+                      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-5nPwJ7XsByF8cWNBqmPapf6TgR4m3q.svg"
+                      alt="Nero"
+                      className="h-full w-full"
+                    />
+                  </div>
+                  <div className="flex flex-col max-w-[80%]">
+                    <div className="bg-gray-100 rounded-lg p-3">
+                      <p className="text-gray-800">{message.content}</p>
+                    </div>
+                    <div className="mt-1 text-xs text-gray-500">
+                      Nero • {format(message.timestamp, "MMM d, yyyy")}
+                    </div>
+                  </div>
                 </div>
               )}
-              <div
-                className={`rounded-lg p-3 ${
-                  message.isUser
-                    ? "bg-blue-100 text-gray-800"
-                    : "bg-gray-100 text-gray-800"
-                }`}
-              >
-                <p>{message.content}</p>
-                <div className="mt-1 text-xs text-gray-500">
-                  {message.isUser ? "You" : "Nero"} •{" "}
-                  {format(message.timestamp, "MMM d, yyyy")}
+              {message.isUser && (
+                <div className="flex items-end gap-2">
+                  <div className="flex flex-col max-w-[80%]">
+                    <div className="bg-blue-100 rounded-lg p-3">
+                      <p className="text-gray-800">{message.content}</p>
+                    </div>
+                    <div className="mt-1 text-xs text-gray-500">
+                      You • {format(message.timestamp, "MMM d, yyyy")}
+                    </div>
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
           ))}
         </div>
 
-        {/* User message */}
-        
+        {/* Input area */}
+        <div className="absolute w-full bottom-0 left-0">
+          <div className="relative w-[796px] mx-auto">
+            {/* DeFi options - position this above the input */}
+            {/* DeFi options - position this above the input */}
+            <div className="absolute bottom-[78px] left-0 right-0">
+              <Collapsible className="w-full">
+                <CollapsibleTrigger asChild>
+                  <Button
+                    variant="ghost"
+                    className="flex items-center justify-between w-full px-6 py-3 bg-collection-1-colors-03-primary rounded-[500px] hover:bg-collection-1-colors-03-primary/90"
+                  >
+                    <span className="font-bold text-collection-1-colors-super-dark-brown-text text-xl">
+                      Quick Actions to manage your DeFi portfolio
+                    </span>
+                    <ChevronDown className="w-6 h-6" />
+                  </Button>
+                </CollapsibleTrigger>
+                <CollapsibleContent>
+                  {/* Blur background */}
+                  <div className="backdrop-blur-md bg-orange-50/70 rounded-2xl p-6">
+                    <div className="grid grid-cols-2 gap-4">
+                      {["Buy", "Sell", "Swap", "Bridge", "Send", "Stake"].map(
+                        (action) => (
+                          <Button
+                            key={action}
+                            variant="outline"
+                            className="border-2 border-orange-200 py-4 text-orange-600 hover:bg-orange-50 text-lg font-medium"
+                            onClick={() => handleDefiAction(action)}
+                          >
+                            {action}
+                          </Button>
+                        )
+                      )}
+                    </div>
+                  </div>
+                </CollapsibleContent>
+              </Collapsible>
+            </div>
 
-        {/* Second bot message */}
-        {/* <div className="flex items-start gap-2">
-          <Avatar className="w-12 h-12 bg-collection-1-colors-accent rounded-[631.58px]">
-            <AvatarFallback className="flex items-center justify-center">
-              <span className="text-xs text-collection-1-colors-white">N</span>
-            </AvatarFallback>
-          </Avatar>
+            {/* Input box - always visible */}
+            <div className="flex items-center w-full h-[78px] px-4 py-6 rounded-[500px] border border-solid border-collection-1-colors-02-primary bg-white">
+              <form
+                onSubmit={handleSendMessage}
+                className="relative w-full flex items-center"
+              >
+                <input
+                  type="text"
+                  value={inputValue}
+                  onChange={(e) => setInputValue(e.target.value)}
+                  placeholder="Write your message..."
+                  className="w-full bg-transparent border-none outline-none px-4"
+                />
 
-          <div className="flex flex-col items-start gap-2 w-[558px]">
-            <CardContent className="flex flex-col p-6 bg-[#f7f7f7] rounded-[0px_16px_16px_16px]">
-              <p className="[font-family:'HelveticaNeue-Light',Helvetica] font-light text-collection-1-colors-super-dark-brown-text text-base leading-[26.1px]">
-                {chatMessages[2].content}
-              </p>
-            </CardContent>
-
-            <div className="flex items-center gap-2 w-full">
-              <div className="flex items-center gap-2">
-                <Image className="w-6 h-6" />
-              </div>
-              <span className="[font-family:'HelveticaNeue-Light',Helvetica] font-light text-collection-1-colors-dark-gray text-xs leading-[19.6px]">
-                {chatMessages[2].timestamp}
-              </span>
+                <Button
+                  type="submit"
+                  size="icon"
+                  className="ml-2 p-4 bg-orange-500 rounded-[500px] hover:bg-orange-600 z-10"
+                  disabled={!inputValue.trim()}
+                >
+                  <Send className="w-[22px] h-[22px] text-white" />
+                </Button>
+              </form>
             </div>
           </div>
-        </div> */}
-      </div>
-
-      {/* Input area */}
-      {/* <div className="absolute w-full h-[188px] bottom-0 left-0">
-        <div className="relative w-[796px] h-[156px] mx-auto">
-          <div className="absolute w-[656px] h-[149px] top-0 left-[70px] backdrop-blur-[10px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(10px)_brightness(100%)] [background:linear-gradient(180deg,rgba(255,255,255,0)_0%,rgba(255,255,255,0.56)_100%)] opacity-[0.52]" />
-
-          <div className="flex flex-col w-full items-start gap-[var(--size-space-300)] absolute top-[13px] left-0">
-            <Collapsible
-              className="w-full"
-              open={showDefiOptions}
-              onOpenChange={setShowDefiOptions}
-            >
-              <CollapsibleTrigger asChild>
-                <Button
-                  variant="ghost"
-                  className="flex items-center justify-between w-full px-6 py-2.5 bg-collection-1-colors-03-primary rounded-[500px] hover:bg-collection-1-colors-03-primary/90"
-                >
-                  <span className="[font-family:'HelveticaNeue-Bold',Helvetica] font-bold text-collection-1-colors-super-dark-brown-text text-xl leading-[32.6px]">
-                    Quick Actions to manage your DeFi portfolio
-                  </span>
-                  {showDefiOptions ? (
-                    <ChevronUp className="w-6 h-6" />
-                  ) : (
-                    <ChevronDown className="w-6 h-6" />
-                  )}
-                </Button>
-              </CollapsibleTrigger>
-              <CollapsibleContent>
-                <div className="grid grid-cols-2 gap-3 p-4">
-                  {[
-                    "Buy",
-                    "Sell",
-                    "Swap",
-                    "Bridge",
-                    "Send",
-                    "Stake",
-                    "Questflow",
-                  ].map((action) => (
-                    <Button
-                      key={action}
-                      variant="outline"
-                      className="border-2 border-blue-200 py-3 text-blue-600 hover:bg-blue-50"
-                      onClick={() => handleDefiAction(action)}
-                      disabled={isProcessing && action === "Swap"}
-                    >
-                      {action}
-                    </Button>
-                  ))}
-                </div>
-              </CollapsibleContent>
-            </Collapsible>
-
-          
-            <div className="flex items-center w-full h-[78px] px-[var(--size-space-600)] py-6 rounded-[500px] border border-solid border-collection-1-colors-02-primary">
-  <form onSubmit={handleSendMessage} className="relative w-full flex items-center">
-    <input
-      type="text"
-      value={inputValue}
-      onChange={(e) => setInputValue(e.target.value)}
-      placeholder="Write your message..."
-      className="w-full bg-transparent border-none outline-none px-4"
-    />
-    
-    <Button 
-      type="submit"
-      size="icon"
-      variant = "outline"
-      className="inline-flex items-center justify-center p-4 bg-collection-1-colors-03-primary rounded-full border-none hover:bg-collection-1-colors-03-primary/90"
-      disabled={!inputValue.trim()}
-    >
-      <Send
-      className="w-[22px] h-[22px] text-collection-1-colors-super-dark-brown-text"
-      strokeWidth={2} />
-      <span className="sr-only">send message</span>
-    </Button>
-  </form>
-</div>
-          </div>
         </div>
-      </div> */}
-      <div className="absolute w-full bottom-0 left-0">
-        <div className="relative w-[796px] mx-auto">
-          {/* DeFi options - position this above the input */}
-          {/* DeFi options - position this above the input */}
-          <div className="absolute bottom-[78px] left-0 right-0">
-            <Collapsible className="w-full">
-              <CollapsibleTrigger asChild>
-                <Button
-                  variant="ghost"
-                  className="flex items-center justify-between w-full px-6 py-3 bg-collection-1-colors-03-primary rounded-[500px] hover:bg-collection-1-colors-03-primary/90"
-                >
-                  <span className="font-bold text-collection-1-colors-super-dark-brown-text text-xl">
-                    Quick Actions to manage your DeFi portfolio
-                  </span>
-                  <ChevronDown className="w-6 h-6" />
-                </Button>
-              </CollapsibleTrigger>
-              <CollapsibleContent>
-                {/* Blur background */}
-                <div className="backdrop-blur-md bg-orange-50/70 rounded-2xl p-6">
-                  <div className="grid grid-cols-2 gap-4">
-                    {["Buy", "Sell", "Swap", "Bridge", "Send", "Stake"].map(
-                      (action) => (
-                        <Button
-                          key={action}
-                          variant="outline"
-                          className="border-2 border-orange-200 py-4 text-orange-600 hover:bg-orange-50 text-lg font-medium"
-                          onClick={() => handleDefiAction(action)}
-                        >
-                          {action}
-                        </Button>
-                      )
-                    )}
-                  </div>
-                </div>
-              </CollapsibleContent>
-            </Collapsible>
-          </div>
-
-          {/* Input box - always visible */}
-          <div className="flex items-center w-full h-[78px] px-4 py-6 rounded-[500px] border border-solid border-collection-1-colors-02-primary bg-white">
-            <form
-              onSubmit={handleSendMessage}
-              className="relative w-full flex items-center"
-            >
-              <input
-                type="text"
-                value={inputValue}
-                onChange={(e) => setInputValue(e.target.value)}
-                placeholder="Write your message..."
-                className="w-full bg-transparent border-none outline-none px-4"
-              />
-
-              <Button
-                type="submit"
-                size="icon"
-                className="ml-2 p-4 bg-orange-500 rounded-[500px] hover:bg-orange-600 z-10"
-                disabled={!inputValue.trim()}
-              >
-                <Send className="w-[22px] h-[22px] text-white" />
-              </Button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </Card>
+      </Card>
     </div>
   );
 }
-
-// "use client";
-
-// import React, { useState } from "react";
-// import { ArrowUp, ChevronDown, ChevronLeft, Copy, Send, Image } from "lucide-react";
-// import { Button } from "@/components/ui/button";
-// import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-// import { Card, CardContent } from "@/components/ui/card";
-// import { Input } from "@/components/ui/input";
-// import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
-
-// interface NeroChatProps {
-//   onClose: () => void;
-// }
-
-// const chatMessages = [
-//   { id: 1, sender: "bot", content: "Hello! How can I assist you today?", timestamp: "Feb 26, 2025" },
-//   { id: 2, sender: "user", content: "I need help with my portfolio.", timestamp: "Feb 26, 2025" },
-//   { id: 3, sender: "bot", content: "Sure, I can help with that. What do you need assistance with?", timestamp: "Feb 26, 2025" }
-// ];
-
-// export function NeroChat({ onClose }: NeroChatProps) {
-//   const [inputValue, setInputValue] = useState("");
-
-//   const handleSendMessage = (e: React.FormEvent) => {
-//     e.preventDefault();
-//     if (!inputValue.trim()) return;
-//     // Add message sending logic here
-//     setInputValue("");
-//   };
-
-//   return (
-//     <Card className="relative w-full max-w-[892px] h-[895px] bg-white rounded-lg overflow-hidden shadow-chatbot-modal-shadow">
-//       {/* Header */}
-//       <header className="flex items-center justify-between p-6 bg-light-blue border-b border-gray-300">
-//         <div className="flex items-center gap-4">
-//           <Button variant="ghost" size="icon" onClick={onClose}>
-//             <ChevronLeft className="w-6 h-6" />
-//           </Button>
-//           <h1 className="font-bold text-dark-brown text-4xl">Nero</h1>
-//         </div>
-//       </header>
-
-//       {/* Chat container */}
-//       <div className="flex flex-col h-[calc(100%-188px)] overflow-y-auto p-6 space-y-6">
-//         {chatMessages.map((message, index) => (
-//           <div key={index} className={`flex ${message.sender === "user" ? "justify-end" : "justify-start"}`}>
-//             {message.sender === "bot" && (
-//               <Avatar className="w-12 h-12 bg-accent rounded-full">
-//                 <AvatarFallback className="flex items-center justify-center">
-//                   <span className="text-xs text-white">N</span>
-//                 </AvatarFallback>
-//               </Avatar>
-//             )}
-//             <div className={`flex flex-col ${message.sender === "user" ? "items-end" : "items-start"} max-w-[70%]`}>
-//               <CardContent className={`p-4 ${message.sender === "user" ? "bg-light-blue" : "bg-gray-100"} rounded-lg`}>
-//                 <p className="text-dark-brown">{message.content}</p>
-//               </CardContent>
-//               <span className="text-xs text-gray-500">{message.timestamp}</span>
-//             </div>
-//           </div>
-//         ))}
-//       </div>
-
-//       {/* Input area */}
-//       <div className="absolute w-full h-[188px] bottom-0 left-0 bg-white">
-//         <div className="relative w-[796px] h-[156px] mx-auto">
-//           <div className="absolute w-[656px] h-[149px] top-0 left-[70px] backdrop-blur-[10px] backdrop-brightness-[100%] bg-gradient-to-b from-transparent to-white opacity-50" />
-//           <div className="flex flex-col w-full items-start gap-4 absolute top-4 left-0">
-//             <Collapsible className="w-full">
-//               <CollapsibleTrigger asChild>
-//                 <Button
-//                   variant="ghost"
-//                   className="flex items-center justify-between w-full px-6 py-2.5 bg-primary rounded-full hover:bg-primary/90"
-//                 >
-//                   <span className="font-bold text-dark-brown text-xl">Quick Actions to manage your DeFi portfolio</span>
-//                   <ChevronDown className="w-6 h-6" />
-//                 </Button>
-//               </CollapsibleTrigger>
-//               <CollapsibleContent>
-//                 {/* Content for quick actions would go here */}
-//               </CollapsibleContent>
-//             </Collapsible>
-//             <div className="flex items-center w-full h-[78px] px-6 py-4 rounded-full border border-primary">
-//               <Input
-//                 className="flex-1 border-none shadow-none text-dark-gray focus:ring-0"
-//                 placeholder="Write your message here..."
-//                 value={inputValue}
-//                 onChange={(e) => setInputValue(e.target.value)}
-//               />
-//               <Button className="p-4 bg-primary rounded-full hover:bg-primary/90" onClick={handleSendMessage}>
-//                 <Send className="w-6 h-6" />
-//               </Button>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </Card>
-//   );

@@ -139,8 +139,6 @@ export function TransactionsPage() {
         ))}
       </div>
 
-
-
       {/* <div className="grid md:grid-cols-2 gap-6 mb-6">
         <div className="bg-white p-4 rounded-lg border">
           <h3 className="text-base font-medium mb-4">
@@ -176,7 +174,7 @@ export function TransactionsPage() {
           </div>
         </div> */}
 
-        {/* <div className="bg-white p-4 rounded-lg border">
+      {/* <div className="bg-white p-4 rounded-lg border">
           <h3 className="text-base font-medium mb-4">Monthly transactions</h3>
           <div className="h-[300px]">
             <ResponsiveContainer width="100%" height="100%">
@@ -208,7 +206,7 @@ export function TransactionsPage() {
           </div>
         </div> */}
 
-        {/* 
+      {/* 
     <div className="flex flex-col justify-center items-center min-h-screen bg-gray-100">
       {financialData.map((item, index) => (
         <Card
@@ -217,7 +215,7 @@ export function TransactionsPage() {
             ${item.bgColor} border ${item.borderColor} rounded-lg shadow-md`}
         >
           {/* Icon */}
-        {/* <div className="relative w-[53.85px] h-[53.85px] flex items-center justify-center">
+      {/* <div className="relative w-[53.85px] h-[53.85px] flex items-center justify-center">
             {item.trend === "up" ? (
               <TrendingUp className={`w-[35px] h-[35px] ${item.textColor}`} />
             ) : (
@@ -226,7 +224,7 @@ export function TransactionsPage() {
           </div>
 
           {/* Content */}
-        {/* <div className="flex flex-col items-start">
+      {/* <div className="flex flex-col items-start">
             <h3 className="text-[21px] font-normal text-[#242325]">{item.title}</h3>
             <p className="text-[35px] font-normal text-[#242325]">{item.amount}</p>
             <span className={`text-[14px] font-normal text-center ${item.textColor}`}>
@@ -260,7 +258,7 @@ export function TransactionsPage() {
       </div>
 
       {/* Financial Data Cards */}
-       {/* <div className="flex flex-wrap justify-center gap-6">
+      {/* <div className="flex flex-wrap justify-center gap-6">
          {financialData.map((item, index) => (
           <div key={index} className={`flex items-center p-6 gap-4 w-64 h-40 ${item.bgColor} border ${item.borderColor} rounded-lg shadow-md`}>
             <div className="relative w-14 h-14 flex items-center justify-center">
@@ -275,9 +273,9 @@ export function TransactionsPage() {
         ))} 
       </div> */}
 
-{/* <div className="flex flex-wrap gap-6">
+      {/* <div className="flex flex-wrap gap-6">
   {/* Charts Section */}
-  {/* <div className="flex-1 grid md:grid-cols-2 gap-6">
+      {/* <div className="flex-1 grid md:grid-cols-2 gap-6">
     <div className="bg-white p-4 rounded-lg border">
       <h3 className="text-base font-medium mb-4">Real-time performance analysis</h3>
       <div className="h-[300px]">
@@ -294,7 +292,7 @@ export function TransactionsPage() {
       </div>
     </div> */}
 
-    {/* <div className="bg-white p-4 rounded-lg border">
+      {/* <div className="bg-white p-4 rounded-lg border">
       <h3 className="text-base font-medium mb-4">Monthly transactions</h3>
       <div className="h-[300px]">
         <ResponsiveContainer width="100%" height="100%">
@@ -311,7 +309,7 @@ export function TransactionsPage() {
     </div>
   </div> */}
 
-  {/* Financial Data Cards
+      {/* Financial Data Cards
   <div className="flex flex-col gap-4">
     {financialData.map((item, index) => (
       <Card
@@ -319,8 +317,8 @@ export function TransactionsPage() {
         className={`flex flex-row items-center p-6 gap-4 w-[258.81px] h-[152px] 
           ${item.bgColor} border ${item.borderColor} rounded-lg shadow-md`}
       > */}
-        {/* Icon */}
-        {/* <div className="relative w-[53.85px] h-[53.85px] flex items-center justify-center">
+      {/* Icon */}
+      {/* <div className="relative w-[53.85px] h-[53.85px] flex items-center justify-center">
           {item.trend === "up" ? (
             <TrendingUp className={`w-[35px] h-[35px] ${item.textColor}`} />
           ) : (
@@ -328,8 +326,8 @@ export function TransactionsPage() {
           )}
         </div> */}
 
-        {/* Content */}
-        {/* <div className="flex flex-col items-start">
+      {/* Content */}
+      {/* <div className="flex flex-col items-start">
           <h3 className="text-[21px] font-normal text-[#242325]">{item.title}</h3>
           <p className="text-[35px] font-normal text-[#242325]">{item.amount}</p>
           <span className={`text-[14px] font-normal text-center ${item.textColor}`}>
@@ -339,75 +337,107 @@ export function TransactionsPage() {
       </Card>
     ))}
   </div> */}
-{/* </div> */} 
+      {/* </div> */}
 
-<div className="bg-white p-6 rounded-lg border border-gray-300 shadow-md w-full">
-      <h2 className="text-lg font-semibold mb-4">Quick overview</h2>
+      <div className="bg-white p-6 rounded-lg border border-gray-300 shadow-md w-full mb-6">
+        <h2 className="text-lg font-semibold mb-4">Quick overview</h2>
 
-      {/* Main Container - Charts + Financial Cards */}
-      <div className="flex flex-row gap-6">
-        {/* Charts Section */}
-        <div className="flex flex-1 gap-6">
-          {/* Real-time Performance Chart */}
-          <div className="bg-white p-4 rounded-lg border w-full shadow-sm">
-            <h3 className="text-base font-medium mb-2">Real-time performance analysis</h3>
-            <div className="h-[250px]">
-              <ResponsiveContainer width="100%" height="100%">
-                <LineChart data={transactionData}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
-                  <XAxis dataKey="name" tickLine={false} axisLine={false} />
-                  <YAxis tickLine={false} axisLine={false} />
-                  <Tooltip />
-                  <Line type="monotone" dataKey="current" stroke="#2563eb" strokeWidth={2} dot={false} />
-                  <Line type="monotone" dataKey="past" stroke="#94a3b8" strokeWidth={2} dot={false} />
-                </LineChart>
-              </ResponsiveContainer>
+        {/* Main Container - Charts + Financial Cards */}
+        <div className="flex flex-row gap-6">
+          {/* Charts Section */}
+          <div className="flex flex-1 gap-6">
+            {/* Real-time Performance Chart */}
+            <div className="bg-white p-4 rounded-lg border w-full shadow-sm">
+              <h3 className="text-base font-medium mb-2">
+                Real-time performance analysis
+              </h3>
+              <div className="h-[250px]">
+                <ResponsiveContainer width="100%" height="100%">
+                  <LineChart data={transactionData}>
+                    <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
+                    <XAxis dataKey="name" tickLine={false} axisLine={false} />
+                    <YAxis tickLine={false} axisLine={false} />
+                    <Tooltip />
+                    <Line
+                      type="monotone"
+                      dataKey="current"
+                      stroke="#2563eb"
+                      strokeWidth={2}
+                      dot={false}
+                    />
+                    <Line
+                      type="monotone"
+                      dataKey="past"
+                      stroke="#94a3b8"
+                      strokeWidth={2}
+                      dot={false}
+                    />
+                  </LineChart>
+                </ResponsiveContainer>
+              </div>
+            </div>
+
+            {/* Monthly Transactions Chart */}
+            <div className="bg-white p-4 rounded-lg border w-full shadow-sm">
+              <h3 className="text-base font-medium mb-2">
+                Monthly transactions
+              </h3>
+              <div className="h-[250px]">
+                <ResponsiveContainer width="100%" height="100%">
+                  <LineChart data={transactionData}>
+                    <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
+                    <XAxis dataKey="name" tickLine={false} axisLine={false} />
+                    <YAxis tickLine={false} axisLine={false} />
+                    <Tooltip />
+                    <Line
+                      type="monotone"
+                      dataKey="current"
+                      stroke="#2563eb"
+                      strokeWidth={2}
+                      dot={false}
+                    />
+                    <Line
+                      type="monotone"
+                      dataKey="past"
+                      stroke="#94a3b8"
+                      strokeWidth={2}
+                      dot={false}
+                    />
+                  </LineChart>
+                </ResponsiveContainer>
+              </div>
             </div>
           </div>
 
-          {/* Monthly Transactions Chart */}
-          <div className="bg-white p-4 rounded-lg border w-full shadow-sm">
-            <h3 className="text-base font-medium mb-2">Monthly transactions</h3>
-            <div className="h-[250px]">
-              <ResponsiveContainer width="100%" height="100%">
-                <LineChart data={transactionData}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
-                  <XAxis dataKey="name" tickLine={false} axisLine={false} />
-                  <YAxis tickLine={false} axisLine={false} />
-                  <Tooltip />
-                  <Line type="monotone" dataKey="current" stroke="#2563eb" strokeWidth={2} dot={false} />
-                  <Line type="monotone" dataKey="past" stroke="#94a3b8" strokeWidth={2} dot={false} />
-                </LineChart>
-              </ResponsiveContainer>
-            </div>
+          {/* Financial Data Section */}
+          <div className="flex flex-col gap-4 w-[260px]">
+            {financialData.map((item, index) => (
+              <div
+                key={index}
+                className={`flex items-center justify-between px-8 py-4 h-1/2 rounded-lg shadow-sm border ${item.bgColor} ${item.borderColor}`}
+              >
+                {/* Icon */}
+                <div className="flex items-center">
+                  {item.trend === "up" ? (
+                    <TrendingUp className={`w-10 h-10 ${item.textColor}`} />
+                  ) : (
+                    <TrendingDown className={`w-10 h-10 ${item.textColor}`} />
+                  )}
+                </div>
+
+                {/* Content */}
+                <div className="text-right">
+                  <h3 className="text-lg text-gray-500">{item.title}</h3>
+                  <p className="text-2xl font-semibold">{item.amount}</p>
+                  <span className={`text-lg ${item.textColor}`}>
+                    {item.percentage}
+                  </span>
+                </div>
+              </div>
+            ))}
           </div>
-        </div>
-
-        {/* Financial Data Section */}
-        <div className="flex flex-col gap-4 w-[260px]">
-          {financialData.map((item, index) => (
-            <div key={index} className={`flex items-center justify-between p-4 rounded-lg shadow-sm border ${item.bgColor} ${item.borderColor}`}>
-              {/* Icon */}
-              <div className="flex items-center">
-                {item.trend === "up" ? (
-                  <TrendingUp className={`w-6 h-6 ${item.textColor}`} />
-                ) : (
-                  <TrendingDown className={`w-6 h-6 ${item.textColor}`} />
-                )}
-              </div>
-
-              {/* Content */}
-              <div className="text-right">
-                <h3 className="text-sm text-gray-500">{item.title}</h3>
-                <p className="text-xl font-semibold">{item.amount}</p>
-                <span className={`text-sm ${item.textColor}`}>{item.percentage}</span>
-              </div>
-            </div>
-          ))}
         </div>
       </div>
-    </div>
-      
 
       {/* <div className="bg-white rounded-lg border">
         <div className="overflow-x-auto">
@@ -468,93 +498,105 @@ export function TransactionsPage() {
           </div>
         </div>
       </div> */}
-      <div className="bg-white rounded-xl border border-gray-200 p-6 w-full max-w-full shadow-lg">
-      {/* Title with orange border */}
-      <h2 className="text-lg font-semibold text-gray-900 mb-4 pb-2 border-b-2 border-orange-500">All transactions</h2>
-      {/* Table */}
-      <div className="overflow-x-auto w-full">
-        <table className="w-full border-collapse">
-          <thead>
-            <tr className="text-left text-sm font-semibold text-gray-700 border-b-2 border-orange-500">
-              <th className="py-3 px-4 border-r border-orange-300">TXN HASH</th>
-              <th className="py-3 px-4 border-r border-orange-300">Method</th>
-              <th className="py-3 px-4 border-r border-orange-300">Deposit Value</th>
-              <th className="py-3 px-4 border-r border-orange-300">TXN Fee</th>
-              <th className="py-3 px-4 border-r border-orange-300">FROM</th>
-              <th className="py-3 px-4 border-r border-orange-300">TO</th>
-              <th className="py-3 px-4 border-r border-orange-300">Status</th>
-              <th className="py-3 px-4 border-r border-orange-300">Block Height</th>
-              <th className="py-3 px-4">Age</th>
-            </tr>
-          </thead>
-          <tbody>
-            {transactionsData.map((tx, i) => (
-              <tr
-                key={i}
-                className="border-b border-gray-200 text-sm last:border-0 hover:bg-gray-50 transition-all"
-              >
-                <td className="py-4 px-4 font-medium flex items-center gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-green-500" />
-                  {tx.hash}
-                </td>
-                <td className="py-4 px-4">
-                  {tx.method}
-                </td>
-                <td className="py-4 px-4">{tx.deposit}</td>
-                <td className="py-4 px-4">{tx.fee}</td>
-                <td className="py-4 px-4">{tx.from}</td>
-                <td className="py-4 px-4">{tx.to}</td>
-                <td className="py-4 px-4">
-                  <span className="inline-flex rounded-full border border-green-200 bg-green-50 px-3 py-1 text-xs font-medium text-green-700">
-                    {tx.status}
-                  </span>
-                </td>
-                <td className="py-4 px-4">
-                  <span className="border px-2 py-1 text-xs rounded bg-gray-100">{tx.blockHeight}</span>
-                </td>
-                <td className="py-4 px-4 text-gray-500">{tx.age}</td>
+      <div className="bg-white rounded-lg border border-gray-300 p-6 w-full max-w-full shadow-lg">
+        {/* Title with orange border */}
+        <h2 className="text-lg font-semibold text-gray-900 mb-4 pb-2 border-b-2 border-gray-200">
+          All transactions
+        </h2>
+        {/* Table */}
+        <div className="overflow-x-auto w-full">
+          <table className="w-full border-collapse">
+            <thead>
+              <tr className="text-left text-sm font-semibold text-gray-700 border-b-2 border-gray-100">
+                <th className="py-3 px-4 border-r border-gray-100">
+                  TXN HASH
+                </th>
+                <th className="py-3 px-4 border-r border-gray-100">Method</th>
+                <th className="py-3 px-4 border-r border-gray-100">
+                  Deposit Value
+                </th>
+                <th className="py-3 px-4 border-r border-gray-100">
+                  TXN Fee
+                </th>
+                <th className="py-3 px-4 border-r border-gray-100">FROM</th>
+                <th className="py-3 px-4 border-r border-gray-100">TO</th>
+                <th className="py-3 px-4 border-r border-gray-100">Status</th>
+                <th className="py-3 px-4 border-r border-gray-100">
+                  Block Height
+                </th>
+                <th className="py-3 px-4">Age</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-      {/* Pagination */}
-      <div className="p-4 mt-4 w-full flex justify-center border-t border-orange-300">
-        <div className="flex items-center gap-2">
-          <Button
-            variant="ghost"
-            className="h-8 w-8 p-0 rounded-full text-sm bg-green-600 text-white font-semibold"
-          >
-            1
-          </Button>
-          <Button
-            variant="ghost"
-            className="h-8 w-8 p-0 rounded-full text-sm text-gray-600"
-          >
-            2
-          </Button>
-          <Button
-            variant="ghost"
-            className="h-8 w-8 p-0 rounded-full text-sm text-gray-600"
-          >
-            3
-          </Button>
-          <span className="h-8 w-8 flex items-center justify-center text-gray-400">...</span>
-          <Button
-            variant="ghost"
-            className="h-8 w-8 p-0 rounded-full text-sm text-gray-600"
-          >
-            67
-          </Button>
-          <Button
-            variant="ghost"
-            className="h-8 w-8 p-0 rounded-full text-sm text-gray-600"
-          >
-            68
-          </Button>
+            </thead>
+            <tbody>
+              {transactionsData.map((tx, i) => (
+                <tr
+                  key={i}
+                  className="border-b border-gray-200 text-sm last:border-0 hover:bg-gray-50 transition-all"
+                >
+                  <td className="py-4 px-4 font-medium flex items-center gap-2">
+                    <CheckCircle2 className="h-4 w-4 text-green-500" />
+                    {tx.hash}
+                  </td>
+                  <td className="py-4 px-4">{tx.method}</td>
+                  <td className="py-4 px-4">{tx.deposit}</td>
+                  <td className="py-4 px-4">{tx.fee}</td>
+                  <td className="py-4 px-4">{tx.from}</td>
+                  <td className="py-4 px-4">{tx.to}</td>
+                  <td className="py-4 px-4">
+                    <span className="inline-flex rounded-full border border-green-200 bg-green-50 px-3 py-1 text-xs font-medium text-green-700">
+                      {tx.status}
+                    </span>
+                  </td>
+                  <td className="py-4 px-4">
+                    <span className="border px-2 py-1 text-xs rounded bg-gray-100">
+                      {tx.blockHeight}
+                    </span>
+                  </td>
+                  <td className="py-4 px-4 text-gray-500">{tx.age}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        {/* Pagination */}
+        <div className="p-4 mt-4 w-full flex justify-center border-t border-gray-200">
+          <div className="flex items-center gap-2">
+            <Button
+              variant="ghost"
+              className="h-8 w-8 p-0 rounded-full text-sm bg-green-600 text-white font-semibold"
+            >
+              1
+            </Button>
+            <Button
+              variant="ghost"
+              className="h-8 w-8 p-0 rounded-full text-sm text-gray-600"
+            >
+              2
+            </Button>
+            <Button
+              variant="ghost"
+              className="h-8 w-8 p-0 rounded-full text-sm text-gray-600"
+            >
+              3
+            </Button>
+            <span className="h-8 w-8 flex items-center justify-center text-gray-400">
+              ...
+            </span>
+            <Button
+              variant="ghost"
+              className="h-8 w-8 p-0 rounded-full text-sm text-gray-600"
+            >
+              67
+            </Button>
+            <Button
+              variant="ghost"
+              className="h-8 w-8 p-0 rounded-full text-sm text-gray-600"
+            >
+              68
+            </Button>
+          </div>
         </div>
       </div>
-    </div>
       <ChatModal
         isOpen={isChatOpen}
         onClose={() => setIsChatOpen(false)}
@@ -569,9 +611,8 @@ export function TransactionsPage() {
 
 /* Auto layout */
 
-
-
-{/* <div className="grid md:grid-cols-2 gap-6 mb-6">
+{
+  /* <div className="grid md:grid-cols-2 gap-6 mb-6">
         {["Real-time performance analysis", "Monthly transactions"].map((title, idx) => (
           <div key={idx} className="bg-white p-4 rounded-lg border">
             <h3 className="text-base font-medium mb-4">{title}</h3>
@@ -591,17 +632,18 @@ export function TransactionsPage() {
         ))}
       </div>
 
-      {/* Financial Data Cards */}
-      // <div className="flex flex-wrap justify-center gap-6">
-      //   {financialData.map((item, index) => (
-      //     <div key={index} className={`flex items-center p-6 gap-4 w-64 h-40 ${item.bgColor} border ${item.borderColor} rounded-lg shadow-md`}>
-      //       <div className="relative w-14 h-14 flex items-center justify-center">
-      //         {item.trend === "up" ? <TrendingUp className={`w-9 h-9 ${item.textColor}`} /> : <TrendingDown className={`w-9 h-9 ${item.textColor}`} />}
-      //       </div>
-      //       <div>
-      //         <h3 className="text-lg font-normal text-gray-900">{item.title}</h3>
-      //         <p className="text-2xl font-bold text-gray-900">{item.amount}</p>
-      //         <span className={`text-sm font-medium ${item.textColor}`}>{item.percentage}</span>
-      //       </div>
-      //     </div>
-      //   ))} */}
+      {/* Financial Data Cards */
+}
+// <div className="flex flex-wrap justify-center gap-6">
+//   {financialData.map((item, index) => (
+//     <div key={index} className={`flex items-center p-6 gap-4 w-64 h-40 ${item.bgColor} border ${item.borderColor} rounded-lg shadow-md`}>
+//       <div className="relative w-14 h-14 flex items-center justify-center">
+//         {item.trend === "up" ? <TrendingUp className={`w-9 h-9 ${item.textColor}`} /> : <TrendingDown className={`w-9 h-9 ${item.textColor}`} />}
+//       </div>
+//       <div>
+//         <h3 className="text-lg font-normal text-gray-900">{item.title}</h3>
+//         <p className="text-2xl font-bold text-gray-900">{item.amount}</p>
+//         <span className={`text-sm font-medium ${item.textColor}`}>{item.percentage}</span>
+//       </div>
+//     </div>
+//   ))} */}
