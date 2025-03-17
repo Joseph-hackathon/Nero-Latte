@@ -115,9 +115,9 @@ export function SettingsPage() {
 
         {/* Content area that changes based on active tab */}
         <div className="flex-1">
-          {activeTab === "Account" && (
+          {activeTab === "Account" ? (
             <div className="max-w-lg mx-auto">
-            /* Your second last code for Account tab */
+           
             {successMessage && (
               <div className="mb-4 flex items-center justify-between p-3 bg-green-50 text-green-800 rounded-lg border border-green-200">
                 <div className="flex items-center gap-2">
@@ -291,10 +291,8 @@ export function SettingsPage() {
                 <ChevronRight className="h-5 w-5" />
               </button>
             </div>
-          </div>
-          )}
-
-          {activeTab === "Wallets"}{
+        </div>
+        ) : (
             <div className="max-w-lg mx-auto bg-white rounded-lg border border-gray-200 p-6">
             <div className="mb-8">
               <h2 className="text-lg font-medium text-gray-800 mb-2">
@@ -338,7 +336,7 @@ export function SettingsPage() {
               </div>
             </div>
           </div>
-          }
+        )}
            
 
       

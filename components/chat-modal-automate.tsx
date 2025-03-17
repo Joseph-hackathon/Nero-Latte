@@ -41,7 +41,7 @@ export function ChatModalAutomate({ isOpen, onClose, onStartConversation }: Chat
   ];
 
   return (
-    <div className="z-50 flex items-center">
+    <div className="flex items-center">
       <div className="w-[893px] p-0 overflow-hidden shadow-chatbot-modal-shadow rounded-lg border-none max-w-none">
         <div className="flex flex-col">
           {activeView === "home" ? (
