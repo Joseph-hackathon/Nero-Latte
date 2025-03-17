@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Send, Check as CheckIcon } from "lucide-react";
+import { ArrowLeft, Send, Check as CheckIcon , Trash} from "lucide-react";
 import { NeroChat } from "@/components/nero-chat";
 import { ChatModalAutomate } from "@/components/chat-modal-automate";
 import { StepsSidebar } from "@/components/StepsSidebar";
@@ -171,7 +171,12 @@ export function AutomatePage() {
                   </p>
                 </div>
                 <div className="border rounded p-2 text-gray-400">
-                  <svg
+                
+<div className="border rounded p-2 text-gray-400">
+  <Trash size={24} />
+</div>
+
+                  {/* <svg
                     className="w-5 h-5"
                     fill="none"
                     stroke="currentColor"
@@ -184,7 +189,7 @@ export function AutomatePage() {
                       strokeWidth={2}
                       d="M6 18L18 6M6 6l12 12"
                     />
-                  </svg>
+                  </svg> */}
                 </div>
               </div>
             </div>

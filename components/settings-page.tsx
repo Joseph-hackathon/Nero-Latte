@@ -3,6 +3,9 @@
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import { bitteWallet } from "@/lib/bitte-wallet";
+import { ChatModal } from "@/components/chat-modal";
+import { NeroChat } from "@/components/nero-chat";
+import { ConnectButton } from "@/components/ConnectButton";
 import React from "react";
 import {
   User,
@@ -13,6 +16,7 @@ import {
   X,
   Check,
   ChevronDown,
+  Gift,
 } from "lucide-react";
 import {
   Collapsible,
@@ -21,6 +25,17 @@ import {
 } from "@/components/ui/collapsible";
 
 export function SettingsPage() {
+  const [isChatOpen, setIsChatOpen] = useState(false);
+  const [isNeroChatOpen, setIsNeroChatOpen] = useState(false);
+
+  const handleStartConversation = () => {
+    setIsChatOpen(false);
+    setIsNeroChatOpen(true);
+  };
+
+  const handleLogoClick = () => {
+    setIsChatOpen(true);
+  };
   const [autoRebalancing, setAutoRebalancing] = React.useState(true);
   const [dailyInsights, setDailyInsights] = React.useState(false);
   const [successMessage, setSuccessMessage] = React.useState(true);
@@ -56,24 +71,52 @@ export function SettingsPage() {
   return (
     <div className="p-6">
       <div className="mb-6">
-        <h1 className="text-2xl font-bold mb-2">Setting</h1>
         <div className="flex justify-between items-center">
-          <div>
-            <div className="text-sm text-gray-500">Balance</div>
-            <div className="flex items-center gap-2">
-              <div className="text-3xl font-bold">$11.8</div>
-              <div className="text-sm text-green-500">+2.5%</div>
+          <div className="flex items-center gap-4">
+            <div onClick={handleLogoClick} className="cursor-pointer">
+              <img
+                src="/Frame 1321317602.png"
+                alt="Logo"
+                className="w-27 h-27"
+              />
+            </div>
+
+            <div>
+              <div className="text-sm text-gray-500">Balance</div>
+              <div className="flex items-center gap-2">
+                <div className="text-3xl font-bold">$11.8</div>
+                <div className="text-sm text-green-500">+2.5%</div>
+              </div>
             </div>
           </div>
-          <div className="text-right">
-            <div className="text-sm text-gray-500">NAME points</div>
-            <div className="flex items-center gap-2 justify-end">
+
+          <div className="flex items-start gap-2">
+            {/* Gift Icon */}
+            <Gift
+              className="w-20 h-20 text-orange-300 opacity-80"
+              strokeWidth={0.6}
+            />
+
+            {/* Text Section */}
+            <div className="text-left">
+              <div className="text-sm text-gray-500">Nero Latte Points</div>
               <div className="text-xl font-bold">630 XP</div>
-              <div className="text-sm text-green-500">+2.5%</div>
+              <div className="text-sm text-green-500">+25</div>
             </div>
           </div>
         </div>
       </div>
+
+      
+      
+      
+      <ChatModal
+        isOpen={isChatOpen}
+        onClose={() => setIsChatOpen(false)}
+        onStartConversation={handleStartConversation}
+      />
+
+      {isNeroChatOpen && <NeroChat onClose={() => setIsNeroChatOpen(false)} />}
 
       {/* <div className="flex gap-6">
         <div className="w-48">
@@ -95,7 +138,7 @@ export function SettingsPage() {
         </div> */}
 
       <div className="flex gap-6">
-        <div className="w-48">
+        <div className="min-w-[240px]"> 
           <div className="bg-white rounded-lg border overflow-hidden">
             {["Account", "Wallets"].map((tab) => (
               <button
@@ -116,7 +159,7 @@ export function SettingsPage() {
         {/* Content area that changes based on active tab */}
         <div className="flex-1">
           {activeTab === "Account" ? (
-            <div className="max-w-lg mx-auto">
+            <div className="min-w-full  mx-auto">
            
             {successMessage && (
               <div className="mb-4 flex items-center justify-between p-3 bg-green-50 text-green-800 rounded-lg border border-green-200">
@@ -293,7 +336,7 @@ export function SettingsPage() {
             </div>
         </div>
         ) : (
-            <div className="max-w-lg mx-auto bg-white rounded-lg border border-gray-200 p-6">
+            <div className="min-w-full mx-auto bg-white rounded-lg border border-gray-200 p-6">
             <div className="mb-8">
               <h2 className="text-lg font-medium text-gray-800 mb-2">
                 Your connected wallets

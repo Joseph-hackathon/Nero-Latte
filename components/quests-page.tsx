@@ -1,12 +1,28 @@
 "use client"
+import { ChatModal } from "@/components/chat-modal";
+import { NeroChat } from "@/components/nero-chat";
+import { ConnectButton } from "@/components/ConnectButton";
+import { useState } from "react"; 
 
 export function QuestsPage() {
+  const [isChatOpen, setIsChatOpen] = useState(false);
+    const [isNeroChatOpen, setIsNeroChatOpen] = useState(false);
+  
+    const handleStartConversation = () => {
+      setIsChatOpen(false);
+      setIsNeroChatOpen(true);
+    };
+  
+    const handleLogoClick = () => {
+      setIsChatOpen(true);
+    };
   return (
-    <div className="flex flex-col gap-4 p-4 max-w-4xl mx-auto">
+    
+    <div className="flex flex-col gap-4 min-w-full mx-auto p-4">
       {/* Top cards row */}
-      <div className="flex gap-4">
+      <div className="flex gap-4 min-h-1/2">
         {/* Left card with cat and level */}
-        <div  style={{ backgroundColor: '#451F17' }} className="bg-brown-800 rounded-lg p-4 w-full flex flex-col items-center text-white">
+        <div  style={{ backgroundColor: '#451F17' }} className="bg-brown-800 rounded-lg p-4 w-1/2 flex flex-col items-center text-white">
           <div className="w-24 h-24 mb-2">
             <img src="/Group 22.png" alt="Cat mascot" className="w-full" />
           </div>
@@ -49,13 +65,27 @@ export function QuestsPage() {
         </div>
         
         {/* Right card with price */}
-        <div className="bg-white rounded-lg p-4 w-1/2 flex flex-col items-end">
-          <div className="flex items-center justify-end w-full mb-4">
+        <div className="bg-white rounded-lg p-4 w-1/2 flex flex-col items-center">
+          <div className="flex items-center justify-center w-full mb-4">
             <div className="bg-brown-800 rounded-lg p-2 flex items-center">
-              <img src="/api/placeholder/24/24" alt="Small cat" className="w-6 h-6 mr-2" />
-              <span className="text-white text-sm">Talk to AI</span>
+            <div onClick={handleLogoClick} className="cursor-pointer">
+              <img
+                src="/Frame 1321317602.png"
+                alt="Logo"
+                className="w-27 h-27"
+              />
+            </div>
+             
             </div>
           </div>
+
+          <ChatModal
+                  isOpen={isChatOpen}
+                  onClose={() => setIsChatOpen(false)}
+                  onStartConversation={handleStartConversation}
+                />
+          
+                {isNeroChatOpen && <NeroChat onClose={() => setIsNeroChatOpen(false)} />}
           
           <span className="text-xs text-gray-400">Balance</span>
           <h1 className="text-5xl font-bold">$110.8</h1>
@@ -64,6 +94,8 @@ export function QuestsPage() {
       </div>
       
       {/* Middle row */}
+
+      <div>
       <div className="flex gap-4">
         {/* Monthly goal card */}
         <div className="bg-white rounded-lg p-4 w-1/2">
@@ -166,9 +198,10 @@ export function QuestsPage() {
           </button>
         </div>
       </div>
+      </div>
       
       {/* Bottom divider */}
-      <div className="border-b border-gray-300 border-dashed mt-2"></div>
+      
     </div>
     // <div className="p-6">
     //   <div className="mb-6">
