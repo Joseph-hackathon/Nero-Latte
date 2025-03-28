@@ -9,7 +9,7 @@
   <a href="" style="color: #a77dff">Espresso</a> | <a href="" style="color: #a77dff">Open Intents</a> | <a href="" style="color: #a77dff">ElizaOS</a>
 </p>
 
-![banner-nero](https://github.com/user-attachments/assets/54679f20-6d3a-4222-854e-af2751571d5b)
+![image](https://github.com/user-attachments/assets/3b7f6740-9693-417e-b361-7dd85a28b70a)
 
 ## Overview  
 Nero Latte is an AI-driven **DeFi automation and educational platform** that enhances user engagement on the **Espresso network**. It simplifies **cross-chain transactions** using AI agents while providing an **interactive learning experience** through **short animations**. Additionally, it integrates a **gamified AI character progression system**, allowing users to level up and evolve their AI companion by engaging with the platform.  
