@@ -27,6 +27,10 @@ Many users **don’t understand how the Espresso network works** and are unaware
 ## Solution: “I’ll Order a Nero Latte”  
 Nero Latte **enhances the DeFi experience** by combining **AI-driven automation, education, and gamification** into one seamless platform.  
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/2befb895-366a-41bc-a8b3-e9812cb7601c">
+</p>
+
 - **AI-Powered Educational Animations** – When a transaction is executed, Nero Latte generates a **1-2 second animation** explaining what happened on the Espresso network.  
 - **Gamified AI Companion** – Users interact with an **AI character that evolves based on engagement** and transaction activity.  
 - **DeFi Automation** – AI agents **optimize trades, handle cross-chain swaps, and automate transactions** based on user preferences.  
