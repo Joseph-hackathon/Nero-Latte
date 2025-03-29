@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
-  <a href="" style="color: #a77dff">Espresso</a> | <a href="" style="color: #a77dff">Open Intents</a> | <a href="" style="color: #a77dff">ElizaOS</a>
+  <a href="" style="color: #a77dff">Espresso</a> | <a href="" style="color: #a77dff">Cross-Chain(Across Protocol)</a> | <a href="https://github.com/chan3785/plugin-across" style="color: #a77dff">ElizaOS Plugin</a>
 </p>
 
 ![image](https://github.com/user-attachments/assets/3b7f6740-9693-417e-b361-7dd85a28b70a)
