@@ -1,4 +1,5 @@
-<h1 align="center">Nero Latte</h1>
+![neroLatte-Logo(with text)-png](https://github.com/user-attachments/assets/32b91dd6-01d6-425b-b130-844f03847b21)
+
 <h3 align="center">AI-Powered DeFi Companion on Espresso Network</h3>
 
 <p align="center">
