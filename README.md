@@ -10,10 +10,10 @@
   <a href="" style="color: #a77dff">Espresso</a> | <a href="" style="color: #a77dff">Cross-Chain(Across Protocol)</a> | <a href="https://github.com/chan3785/plugin-across" style="color: #a77dff">ElizaOS Plugin</a>
 </p>
 
-![image](https://github.com/user-attachments/assets/3b7f6740-9693-417e-b361-7dd85a28b70a)
-
 ## Overview  
 Nero Latte is an AI-driven **DeFi automation and educational platform** that enhances user engagement on the **Espresso network**. It simplifies **cross-chain transactions** using AI agents while providing an **interactive learning experience** through **short animations**. Additionally, it integrates a **gamified AI character progression system**, allowing users to level up and evolve their AI companion by engaging with the platform.  
+
+![image](https://github.com/user-attachments/assets/3b7f6740-9693-417e-b361-7dd85a28b70a)
 
 ## Background  
 The **Espresso network** is designed to facilitate **fast and secure cross-chain transactions** with seamless interoperability. However, many users are **unfamiliar with how Espresso works** and how they can benefit from it. Meanwhile, **existing AI-powered DeFi services focus purely on automation**, lacking interactive elements that enhance user experience. **Nero Latte bridges this gap** by introducing an AI agent that not only **automates transactions** but also **educates and engages users through gamification**.  
