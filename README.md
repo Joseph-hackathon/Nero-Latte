@@ -2,7 +2,7 @@
 <h3 align="center">AI-Powered DeFi Companion on Espresso Network</h3>
 
 <p align="center">
-  <a href="" style="color: #a77dff">Platform</a> | <a href="" style="color: #a77dff">Pitchdeck</a> | <a href="" style="color: #a77dff">Demo Video</a>
+  <a href="" style="color: #a77dff">Platform</a> | <a href="https://www.figma.com/deck/S2wbmpBoyj6emPGKRDjuqh" style="color: #a77dff">Pitchdeck</a> | <a href="" style="color: #a77dff">Demo Video</a>
 </p>
 
 <p align="center">
