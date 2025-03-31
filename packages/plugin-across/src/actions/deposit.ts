@@ -139,6 +139,8 @@ export default {
                 (chain) => chain.chainName === destinationChainName
             );
 
+            console.log(sourceChainConfig, destinationChainConfig)
+
             
             // 지갑 클라이언트 생성
             const wallet = createUserWalletClient(
