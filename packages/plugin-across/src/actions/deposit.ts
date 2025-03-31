@@ -130,7 +130,6 @@ export default {
 
             // 런타임 설정에서 개인 키 가져오기
             const privateKey = runtime.getSetting("ACROSS_PRIVATE_KEY");
-            console.log("privateKey: ",privateKey)
             
             // 지원 체인 목록에서 출발 및 도착 체인 찾기
             const sourceChainConfig = supportedChains.find(

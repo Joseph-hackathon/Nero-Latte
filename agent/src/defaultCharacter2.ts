@@ -1,9 +1,10 @@
 import { type Character, ModelProviderName } from "@elizaos/core";
+import { Across } from "@elizaos/plugin-across";
 
 export const defaultCharacter2: Character = {
     name: "NeroLatteJr",
     username: "nerolattejr",
-    plugins: [],
+    plugins: [Across],
     modelProvider: ModelProviderName.ANTHROPIC,
     settings: {
         secrets: {},
