@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-  <a href="" style="color: #a77dff">Espresso</a> | <a href="" style="color: #a77dff">Cross-Chain(Across Protocol)</a> | <a href="https://github.com/chan3785/plugin-across" style="color: #a77dff">ElizaOS Plugin</a>
+  <a href="" style="color: #a77dff">Cross-Chain(Across Protocol)</a> | <a href="https://github.com/chan3785/plugin-across" style="color: #a77dff">ElizaOS Plugin</a>
 </p>
 
 ## Overview  
