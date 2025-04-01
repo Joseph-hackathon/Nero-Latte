@@ -41,6 +41,21 @@ By **blending AI-driven automation with an engaging and educational experience**
 ## How to use Sponsor
 - **Across Protocol:** Across Protocol uses the Across Cross-Chain SDK to extract information from user conversations, including source chain, destination chain, token amount, token name, and recipient. Using this data, the getQuote function calculates the bridge intent route and includes the optimal route in the intent pool. Once the relayer executes these intents, the bridging process is completed.
 
+- **Build Custom Plugins for Eliza OS:**  
+
+1. **Select Eliza OS Version**  
+   - Ensure the version matches the dependencies in `package.json`.  
+
+2. **Clone Eliza OS**  
+   - Use `git checkout` to get the latest version.  
+   - Note: Version changes beyond **v1.0.0 alpha** are not supported.  
+
+3. **Create a Custom Plugin Folder**  
+   - **Required:** `index.ts`, `actions/customAction.ts`  
+   - **Optional:** `src/providers`, `src/types.ts`, `src/environment.ts`  
+
+This is the **basic plugin architecture** for Eliza OS.
+
 ## Key Features  
 ✅ **AI-Powered DeFi Automation** – Seamlessly execute cross-chain transactions.  
 ✅ **Espresso Network Education** – Short AI-generated animations explain how transactions work.  
