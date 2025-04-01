@@ -38,6 +38,9 @@ Nero Latte **enhances the DeFi experience** by combining **AI-driven automation,
 
 By **blending AI-driven automation with an engaging and educational experience**, Nero Latte ensures that users not only **use DeFi tools efficiently** but also **understand and enjoy the process**.  
 
+## How to use Sponsor
+- **Across Protocol:** Across Protocol uses the Across Cross-Chain SDK to extract information from user conversations, including source chain, destination chain, token amount, token name, and recipient. Using this data, the getQuote function calculates the bridge intent route and includes the optimal route in the intent pool. Once the relayer executes these intents, the bridging process is completed.
+
 ## Key Features  
 ✅ **AI-Powered DeFi Automation** – Seamlessly execute cross-chain transactions.  
 ✅ **Espresso Network Education** – Short AI-generated animations explain how transactions work.  
