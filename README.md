@@ -3,11 +3,11 @@
 <h3 align="center">AI-Powered DeFi Companion on Espresso Network</h3>
 
 <p align="center">
-  <a href="" style="color: #a77dff">Platform</a> | <a href="https://www.figma.com/deck/S2wbmpBoyj6emPGKRDjuqh" style="color: #a77dff">Pitchdeck</a> | <a href="" style="color: #a77dff">Demo Video</a>
+  <a href="https://www.figma.com/deck/S2wbmpBoyj6emPGKRDjuqh" style="color: #a77dff">Pitchdeck</a> | <a href="https://youtu.be/4RPZj5tezj8" style="color: #a77dff">Demo Video</a>
 </p>
 
 <p align="center">
-  <a href="" style="color: #a77dff">Cross-Chain(Across Protocol)</a> | <a href="https://github.com/chan3785/plugin-across" style="color: #a77dff">ElizaOS Plugin</a>
+  <a href="https://github.com/chan3785/plugin-across" style="color: #a77dff">ElizaOS Plugin & Across Protocol</a>
 </p>
 
 ## Overview  
